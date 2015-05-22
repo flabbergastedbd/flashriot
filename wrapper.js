@@ -215,8 +215,10 @@ if (system.args.length < 4) {  // Bail out if enough args are not provided
         flashFiles.push(file);
     }
   }
-  if(flashFiles.length === 0)
+  if(flashFiles.length === 0) {
+    console.log("Either there are no flash files or everything is processed");
     usage();
+  }
 }
 
 if(phantom.injectJs(CONTROLLER) && phantom.injectJs(BINARY_FILE_READER)) {
